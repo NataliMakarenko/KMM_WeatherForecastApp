@@ -10,7 +10,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         DependenciesProvider.injectContext(applicationContext)
         setContent {
-            ForecastScreen(DependenciesProvider.provideMainViewModel())
+            LaunchScreen(DependenciesProvider.provideMainViewModel())
         }
     }
 }

@@ -21,7 +21,7 @@ actual class LocationService(
             task.addOnSuccessListener { location ->
                 location?.let{
                     val addresses = geocoder.getFromLocation(location.latitude, location.longitude, 1)
-                    val address = addresses.firstOrNull()
+                    val address = addresses?.firstOrNull()
                     address?.let {
                         continuation.resume(Result.success(mapper.map(location, address)))
                     } ?: continuation.resume(Result.failure(Error("Error while retrieve address")))

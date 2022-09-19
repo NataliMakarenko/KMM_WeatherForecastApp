@@ -1,7 +1,5 @@
 package com.batist.weatherforecast.presentation.viewmodel
 
-import com.batist.weatherforecast.domain.GetLocationUseCaseContract
-import com.batist.weatherforecast.domain.GetWeatherForecastUseCaseContract
 import com.batist.weatherforecast.domain.GetWeatherUseCase
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -28,8 +26,6 @@ internal expect class MainViewModel {
 
 internal class BaseMainViewModel(
     override val viewModelScope: CoroutineScope,
-    //private val locationUseCase: GetLocationUseCaseContract,
-    // private val weatherUseCase: GetWeatherForecastUseCaseContract
     private val weatherUseCase: GetWeatherUseCase
 ) : MainViewModelContract {
     private val _uiState: MutableStateFlow<WeatherForecastUiState> =

@@ -20,14 +20,18 @@ class WeatherApi(private val httpClient: HttpClient) {
     }
 
     suspend fun getForecast(city: String): WeatherForecastEntity? {
-        val response = httpClient.get(
-            FORECAST_ENDPOINT_CITY.plus(city)
-                .plus(UNITS)
-                .plus("&${API_KEY}")
-        )
-        return if (response.status.isSuccess()) {
-            response.body()
-        } else {
+        return try {
+            val response = httpClient.get(
+                FORECAST_ENDPOINT_CITY.plus(city)
+                    .plus(UNITS)
+                    .plus("&${API_KEY}")
+            )
+            if (response.status.isSuccess()) {
+                response.body()
+            } else {
+                null
+            }
+        } catch (e: Exception) {
             null
         }
     }

@@ -31,7 +31,7 @@ kotlin {
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test"))
-                implementation("io.mockk:mockk:1.12.8")
+                implementation("io.mockk:mockk-jvm:1.12.8")
                 implementation("io.mockk:mockk-common:1.8.13")
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4")
             }
@@ -43,9 +43,9 @@ kotlin {
             }
         }
         val androidTest by getting {
-            dependencies {
-                implementation("io.mockk:mockk-agent-jvm:1.12.8")
-            }
+            //dependencies {
+              //  implementation("io.mockk:mockk-agent-jvm:1.12.8")
+           // }
         }
         val iosX64Main by getting
         val iosArm64Main by getting
@@ -72,10 +72,10 @@ kotlin {
 }
 
 android {
-    compileSdk = 32
+    compileSdk = 33
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
         minSdk = 21
-        targetSdk = 32
+        targetSdk = 33
     }
 }

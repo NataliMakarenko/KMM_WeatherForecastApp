@@ -38,7 +38,7 @@ actual object DependenciesProvider {
                             LocationService(
                                 LocationServices.getFusedLocationProviderClient(it),
                                 LocationMapper(),
-                                Geocoder(context, Locale.ENGLISH)
+                                Geocoder(it, Locale.ENGLISH)
                             ),
                             SharedDependenciesProvider.provideWeatherApi(),
                             SharedDependenciesProvider.provideDefaultDispatcher()
