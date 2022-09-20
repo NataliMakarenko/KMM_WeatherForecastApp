@@ -4,8 +4,6 @@ import com.batist.weatherforecast.data.CacheDataSource
 import com.batist.weatherforecast.data.GetWeatherRepository
 import com.batist.weatherforecast.data.LocationMapper
 import com.batist.weatherforecast.data.LocationService
-import com.batist.weatherforecast.domain.GetLocationUseCase
-import com.batist.weatherforecast.domain.GetWeatherForecastUseCase
 import com.batist.weatherforecast.domain.GetWeatherUseCase
 import com.batist.weatherforecast.presentation.viewmodel.BaseMainViewModel
 import com.batist.weatherforecast.presentation.viewmodel.MainViewModel
@@ -27,11 +25,6 @@ actual object DependenciesProvider {
                         Dispatchers.Main
                     )
                 )
-                //GetLocationUseCase(LocationService(CLLocationManager(), LocationMapper())),
-                //GetWeatherForecastUseCase(
-                //SharedDependenciesProvider.provideWeatherApi(),
-                // SharedDependenciesProvider.provideDefaultDispatcher()
-                //)
             )
         )
     }
